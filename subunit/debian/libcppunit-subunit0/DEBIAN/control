@@ -1,0 +1,15 @@
+Package: libcppunit-subunit0
+Source: subunit
+Version: 1.3.0-2
+Architecture: amd64
+Maintainer: Debian OpenStack <team+openstack@tracker.debian.org>
+Installed-Size: 51
+Depends: libc6 (>= 2.4), libgcc1 (>= 1:3.0), libstdc++6 (>= 5.2)
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: http://code.launchpad.net/subunit
+Description: SubunitTestProgressListener for CPPUnit - C++ shared library
+ subunit is a protocol for test activity reporting. The
+ SubunitTestProgressListener permits outputting Subunit from a CPPUnit test
+ suite.

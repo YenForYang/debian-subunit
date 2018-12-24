@@ -1,0 +1,903 @@
+ dpkg-buildpackage -D -us -uc -ui -b -Jauto -Pnobiarch,nocheck,nodoc
+dpkg-buildpackage: info: source package subunit
+dpkg-buildpackage: info: source version 1.3.0-2
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Ondřej Nový <onovy@debian.org>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+dpkg-source: info: using options from subunit/debian/source/options: --extend-diff-ignore=^[^/]*[.]egg-info/
+ fakeroot debian/rules clean
+pyversions: missing X(S)-Python-Version in control file, fall back to debian/pyversions
+pyversions: missing debian/pyversions file, fall back to supported versions
+py3versions: no X-Python3-Version in control file, using supported versions
+dh clean --with python2,python3,autoreconf
+   debian/rules override_dh_auto_clean
+make[1]: Entering directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+pyversions: missing X(S)-Python-Version in control file, fall back to debian/pyversions
+pyversions: missing debian/pyversions file, fall back to supported versions
+py3versions: no X-Python3-Version in control file, using supported versions
+rm -rf build python_subunit.egg-info
+rm -rf debian/tmp
+rm -f perl/MYMETA.yml
+cp -rf debian/upstream-orig-files/* .
+rm -rf .libs perl/blib \
+	c++/.dirstamp \
+	perl/pm_to_blib \
+	c/lib/.dirstamp \
+	c/tests/.dirstamp \
+	c/tests/.libs \
+	c++/.deps \
+	c/lib/.deps \
+	c/tests/.deps
+find . -iname '*.pyc' -delete
+find . -iname '*.o' -delete
+rm -f Makefile \
+	c++/SubunitTestProgressListener.lo \
+	c/lib/child.lo \
+	c/tests/test_child \
+	config.h \
+	config.log \
+	config.status \
+	libcppunit_subunit.la \
+	libcppunit_subunit.pc \
+	libsubunit.la \
+	libsubunit.pc \
+	libtool \
+	perl/Makefile \
+	perl/Makefile.PL \
+	stamp-h1 \
+	c/tests/test_child.log \
+	c/tests/test_child.trs \
+	perl/MYMETA.json \
+	test-suite.log
+rm -f Makefile.in \
+	aclocal.m4 \
+	compile \
+	config.guess \
+	config.sub \
+	depcomp \
+	install-sh \
+	ltmain.sh \
+	missing \
+	py-compile
+rm -rf m4
+make[1]: Leaving directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+   dh_clean
+FAKEROOTKEY=506364094 LD_LIBRARY_PATH=:/opt/intel/lib/intel64_lin:/opt/intel/tbb/lib/intel64/gcc4.7 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libfakeroot/libfakeroot-sysv.so debian/rules clean
+ debian/rules build
+pyversions: missing X(S)-Python-Version in control file, fall back to debian/pyversions
+pyversions: missing debian/pyversions file, fall back to supported versions
+py3versions: no X-Python3-Version in control file, using supported versions
+dh build --with python2,python3,autoreconf
+   dh_update_autotools_config
+   dh_autoreconf
+aclocal: warning: couldn't open directory 'm4': No such file or directory
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+configure.ac:22: installing './ar-lib'
+configure.ac:19: installing './compile'
+configure.ac:26: installing './config.guess'
+configure.ac:26: installing './config.sub'
+configure.ac:9: installing './install-sh'
+configure.ac:9: installing './missing'
+Makefile.am: installing './depcomp'
+Makefile.am:76: installing './py-compile'
+parallel-tests: installing './test-driver'
+   dh_auto_configure
+	./configure --build=x86_64-linux-gnu --prefix=/usr --includedir=\${prefix}/include --mandir=\${prefix}/share/man --infodir=\${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-silent-rules --libdir=\${prefix}/lib/x86_64-linux-gnu --libexecdir=\${prefix}/lib/x86_64-linux-gnu --disable-maintainer-mode --disable-dependency-tracking
+configure: WARNING: unrecognized options: --disable-maintainer-mode
+configure: loading site script /usr/share/config.site
+Intel(R) Parallel Studio XE 2019 Update 1 for Linux*
+Copyright (C) 2009-2018 Intel Corporation. All rights reserved.
+checking for a BSD-compatible install... /usr/bin/install
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... /usr/bin/gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... ccache icc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether ccache icc accepts -g... yes
+checking for ccache icc option to accept ISO C89... none needed
+checking whether ccache icc understands -c and -o together... yes
+checking dependency style of ccache icc... none
+checking how to run the C preprocessor... ccache icc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for gcc... (cached) ccache icc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether ccache icc accepts -g... (cached) yes
+checking for ccache icc option to accept ISO C89... (cached) none needed
+checking whether ccache icc understands -c and -o together... (cached) yes
+checking dependency style of ccache icc... (cached) none
+checking whether we are using the GNU C++ compiler... yes
+checking whether ccache icpc accepts -g... yes
+checking dependency style of ccache icpc... none
+checking the archiver (xiar) interface... ar
+checking whether ln -s works... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by ccache icc... xild -m elf_x86_64
+checking if the linker (xild -m elf_x86_64) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/x86_64-linux-gnu-nm -B
+checking the name lister (/usr/bin/x86_64-linux-gnu-nm -B) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for xild -m elf_x86_64 option to reload object files... -r
+checking for objdump... /usr/bin/x86_64-linux-gnu-objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... /usr/bin/x86_64-linux-gnu-strip
+checking for ranlib... xiar s
+checking command to parse /usr/bin/x86_64-linux-gnu-nm -B output from ccache icc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if ccache icc supports -fno-rtti -fno-exceptions... yes
+checking for ccache icc option to produce PIC... -fPIC -DPIC
+checking if ccache icc PIC flag -fPIC -DPIC works... yes
+checking if ccache icc static flag -static works... no
+checking if ccache icc supports -c -o file.o... yes
+checking if ccache icc supports -c -o file.o... (cached) yes
+checking whether the ccache icc linker (xild -m elf_x86_64 -m elf_x86_64) supports shared libraries... xild: warning #10013: no objects specified for multi-file optimization
+xild: executing 'ld'
+yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... ccache icpc -E
+checking for ld used by ccache icpc... xild -m elf_x86_64 -m elf_x86_64
+checking if the linker (xild -m elf_x86_64 -m elf_x86_64) is GNU ld... yes
+checking whether the ccache icpc linker (xild -m elf_x86_64 -m elf_x86_64) supports shared libraries... yes
+checking for ccache icpc option to produce PIC... -fPIC -DPIC
+checking if ccache icpc PIC flag -fPIC -DPIC works... yes
+checking if ccache icpc static flag -static works... no
+checking if ccache icpc supports -c -o file.o... yes
+checking if ccache icpc supports -c -o file.o... (cached) yes
+checking whether the ccache icpc linker (xild -m elf_x86_64 -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for python... /usr/bin/python
+checking for python version... 2.7
+checking for python platform... linux2
+checking for python script directory... ${prefix}/lib/python2.7/dist-packages
+checking for python extension module directory... ${exec_prefix}/lib/python2.7/dist-packages
+checking for stdlib.h... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking size of int... 4
+checking size of short... 2
+checking size of long... 8
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible realloc... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for CHECK... yes
+checking for CPPUNIT... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating libsubunit.pc
+config.status: creating libcppunit_subunit.pc
+config.status: creating Makefile
+config.status: creating perl/Makefile.PL
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+configure: WARNING: unrecognized options: --disable-maintainer-mode
+   dh_auto_build
+	make -j8
+make[1]: Entering directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+make  all-am
+make[2]: Entering directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+mkdir -p perl
+/bin/bash ./libtool  --tag=CC   --mode=compile ccache icc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -Wextra -Wstrict-prototypes  -Wmissing-prototypes -Wwrite-strings  -Wno-variadic-macros  -I./c/include -g -O2 -fdebug-prefix-map=/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -c -o c/lib/child.lo c/lib/child.c
+cd perl && perl Makefile.PL INSTALLDIRS=vendor
+/bin/bash ./libtool  --tag=CXX   --mode=compile ccache icpc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -Wextra -Wwrite-strings -Wno-variadic-macros -I./c/include -g -O2 -fdebug-prefix-map=/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -c -o c++/SubunitTestProgressListener.lo c++/SubunitTestProgressListener.cpp
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -I./c/include -g -O2 -fdebug-prefix-map=/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -c c/lib/child.c  -fPIC -DPIC -o c/lib/.libs/child.o
+libtool: compile:  ccache icpc -DHAVE_CONFIG_H -I. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -Wextra -Wwrite-strings -Wno-variadic-macros -I./c/include -g -O2 -fdebug-prefix-map=/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -c c++/SubunitTestProgressListener.cpp  -fPIC -DPIC -o c++/.libs/SubunitTestProgressListener.o
+icc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit=.'
+Front end time                       0.03 (CPU)       0.00 (elapsed)
+Back end time                        0.01 (CPU)       0.00 (elapsed)
+Total compilation time               0.04 (CPU)       0.00 (elapsed)
+libtool: compile:  ccache icc -DHAVE_CONFIG_H -I. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-variadic-macros -I./c/include -g -O2 -fdebug-prefix-map=/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -c c/lib/child.c -o c/lib/child.o >/dev/null 2>&1
+Generating a Unix-style Makefile
+Writing Makefile for Subunit
+Writing MYMETA.yml and MYMETA.json
+rm perl/Makefile.old > /dev/null
+rm: cannot remove 'perl/Makefile.old': No such file or directory
+make[2]: [Makefile:1637: perl/Makefile] Error 1 (ignored)
+make -C perl all
+make[3]: Entering directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/perl'
+/bin/bash ./libtool  --tag=CC   --mode=link ccache icc -Wall -Werror -Wextra -Wstrict-prototypes  -Wmissing-prototypes -Wwrite-strings  -Wno-variadic-macros  -I./c/include -g -O2 -fdebug-prefix-map=/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o libsubunit.la -rpath /usr/lib/x86_64-linux-gnu c/lib/child.lo  
+cp lib/Subunit.pm blib/lib/Subunit.pm
+cp lib/Subunit/Diff.pm blib/lib/Subunit/Diff.pm
+cp /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/perl/subunit-diff blib/script/subunit-diff
+"/usr/bin/perl" -MExtUtils::MY -e 'MY->fixin(shift)' -- blib/script/subunit-diff
+libtool: link: ccache icc -shared  -fPIC -DPIC  c/lib/.libs/child.o    -g -O2 -march=native -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax   -Wl,-soname -Wl,libsubunit.so.0 -o .libs/libsubunit.so.0.0.0
+make[3]: Leaving directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/perl'
+libtool: link: (cd ".libs" && rm -f "libsubunit.so.0" && ln -s "libsubunit.so.0.0.0" "libsubunit.so.0")
+libtool: link: (cd ".libs" && rm -f "libsubunit.so" && ln -s "libsubunit.so.0.0.0" "libsubunit.so")
+libtool: link: xiar cru .libs/libsubunit.a  c/lib/child.o
+xiar: executing 'ar'
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: xiar s .libs/libsubunit.a
+xiar: executing 'ar'
+libtool: link: ( cd ".libs" && rm -f "libsubunit.la" && ln -s "../libsubunit.la" "libsubunit.la" )
+icpc: command line warning #10006: ignoring unknown option '-fdebug-prefix-map=/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit=.'
+Front end time                       0.86 (CPU)       1.00 (elapsed)
+Back end time                        0.17 (CPU)       0.00 (elapsed)
+Total compilation time               1.03 (CPU)       1.00 (elapsed)
+libtool: compile:  ccache icpc -DHAVE_CONFIG_H -I. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -Wextra -Wwrite-strings -Wno-variadic-macros -I./c/include -g -O2 -fdebug-prefix-map=/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -c c++/SubunitTestProgressListener.cpp -o c++/SubunitTestProgressListener.o >/dev/null 2>&1
+/bin/bash ./libtool  --tag=CXX   --mode=link ccache icpc -Wall -Werror -Wextra -Wwrite-strings -Wno-variadic-macros -I./c/include -g -O2 -fdebug-prefix-map=/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o libcppunit_subunit.la -rpath /usr/lib/x86_64-linux-gnu c++/SubunitTestProgressListener.lo  
+libtool: link: ccache icpc -shared  c++/.libs/SubunitTestProgressListener.o   -L/opt/intel//compilers_and_libraries_2019.1.144/linux/mpi/intel64/libfabric/lib -L/opt/intel/compilers_and_libraries_2019.1.144/linux/tbb/lib/intel64/gcc4.7 -L/opt/intel/tbb/lib/intel64/gcc4.7 -L/opt/intel/compilers_and_libraries_2019.1.144/linux/compiler/lib/intel64_lin -L/usr/lib/gcc/x86_64-linux-gnu/8/ -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/ -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib/ -L/lib/x86_64-linux-gnu/ -L/lib/../lib64 -L/lib/../lib/ -L/usr/lib/x86_64-linux-gnu/ -L/usr/lib/../lib/ -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../ -L/lib64 -L/lib/  -g -O2 -march=native -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax   -Wl,-soname -Wl,libcppunit_subunit.so.0 -o .libs/libcppunit_subunit.so.0.0.0
+libtool: link: (cd ".libs" && rm -f "libcppunit_subunit.so.0" && ln -s "libcppunit_subunit.so.0.0.0" "libcppunit_subunit.so.0")
+libtool: link: (cd ".libs" && rm -f "libcppunit_subunit.so" && ln -s "libcppunit_subunit.so.0.0.0" "libcppunit_subunit.so")
+libtool: link: xiar cru .libs/libcppunit_subunit.a  c++/SubunitTestProgressListener.o
+xiar: executing 'ar'
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: xiar s .libs/libcppunit_subunit.a
+xiar: executing 'ar'
+libtool: link: ( cd ".libs" && rm -f "libcppunit_subunit.la" && ln -s "../libcppunit_subunit.la" "libcppunit_subunit.la" )
+make[2]: Leaving directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+make[1]: Leaving directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+   create-stamp debian/debhelper-build-stamp
+ fakeroot debian/rules binary
+pyversions: missing X(S)-Python-Version in control file, fall back to debian/pyversions
+pyversions: missing debian/pyversions file, fall back to supported versions
+py3versions: no X-Python3-Version in control file, using supported versions
+dh binary --with python2,python3,autoreconf
+   dh_testroot
+   dh_prep
+   dh_installdirs
+   debian/rules override_dh_auto_install-arch
+make[1]: Entering directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+pyversions: missing X(S)-Python-Version in control file, fall back to debian/pyversions
+pyversions: missing debian/pyversions file, fall back to supported versions
+py3versions: no X-Python3-Version in control file, using supported versions
+/usr/bin/make install DESTDIR=/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp
+make[2]: Entering directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+/usr/bin/make -C perl all
+make[3]: Entering directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/perl'
+make[3]: Leaving directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/perl'
+make[3]: Entering directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+ /bin/mkdir -p '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin'
+ /usr/bin/install filters/subunit-1to2 filters/subunit-2to1 filters/subunit-filter filters/subunit-ls filters/subunit-notify filters/subunit-output filters/subunit-stats filters/subunit-tags filters/subunit2csv filters/subunit2disk filters/subunit2gtk filters/subunit2junitxml filters/subunit2pyunit filters/tap2subunit '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin'
+/usr/bin/make -C perl install
+make[4]: Entering directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/perl'
+Installing /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/share/perl5/Subunit.pm
+Installing /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/share/perl5/Subunit/Diff.pm
+Installing /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit-diff
+make[4]: Leaving directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/perl'
+ /bin/mkdir -p '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu'
+ /bin/bash ./libtool   --mode=install /usr/bin/install   libsubunit.la libcppunit_subunit.la '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install .libs/libsubunit.so.0.0.0 /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu/libsubunit.so.0.0.0
+libtool: install: (cd /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu && { ln -s -f libsubunit.so.0.0.0 libsubunit.so.0 || { rm -f libsubunit.so.0 && ln -s libsubunit.so.0.0.0 libsubunit.so.0; }; })
+libtool: install: (cd /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu && { ln -s -f libsubunit.so.0.0.0 libsubunit.so || { rm -f libsubunit.so && ln -s libsubunit.so.0.0.0 libsubunit.so; }; })
+libtool: install: /usr/bin/install .libs/libsubunit.lai /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu/libsubunit.la
+libtool: install: /usr/bin/install .libs/libcppunit_subunit.so.0.0.0 /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu/libcppunit_subunit.so.0.0.0
+libtool: install: (cd /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu && { ln -s -f libcppunit_subunit.so.0.0.0 libcppunit_subunit.so.0 || { rm -f libcppunit_subunit.so.0 && ln -s libcppunit_subunit.so.0.0.0 libcppunit_subunit.so.0; }; })
+libtool: install: (cd /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu && { ln -s -f libcppunit_subunit.so.0.0.0 libcppunit_subunit.so || { rm -f libcppunit_subunit.so && ln -s libcppunit_subunit.so.0.0.0 libcppunit_subunit.so; }; })
+libtool: install: /usr/bin/install .libs/libcppunit_subunit.lai /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu/libcppunit_subunit.la
+libtool: install: /usr/bin/install .libs/libsubunit.a /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu/libsubunit.a
+libtool: install: chmod 644 /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu/libsubunit.a
+libtool: install: xiar s /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu/libsubunit.a
+xiar: executing 'ar'
+libtool: install: /usr/bin/install .libs/libcppunit_subunit.a /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu/libcppunit_subunit.a
+libtool: install: chmod 644 /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu/libcppunit_subunit.a
+libtool: install: xiar s /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu/libcppunit_subunit.a
+xiar: executing 'ar'
+libtool: warning: remember to run 'libtool --finish /usr/lib/x86_64-linux-gnu'
+ /bin/mkdir -p '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/include/subunit'
+ /usr/bin/install -m 644 c/include/subunit/child.h c++/SubunitTestProgressListener.h '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/include/subunit'
+ /bin/mkdir -p '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig'
+ /usr/bin/install -m 644 libsubunit.pc libcppunit_subunit.pc '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig'
+ /bin/mkdir -p '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit'
+ /usr/bin/install -m 644 python/subunit/__init__.py python/subunit/chunked.py python/subunit/details.py python/subunit/filters.py python/subunit/iso8601.py python/subunit/progress_model.py python/subunit/run.py python/subunit/v2.py python/subunit/test_results.py python/subunit/_output.py python/subunit/_to_disk.py '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit'
+Byte-compiling python modules...
+__init__.pychunked.pydetails.pyfilters.pyiso8601.pyprogress_model.pyrun.pyv2.pytest_results.py_output.py_to_disk.py
+Byte-compiling python modules (optimized versions) ...
+__init__.pychunked.pydetails.pyfilters.pyiso8601.pyprogress_model.pyrun.pyv2.pytest_results.py_output.py_to_disk.py
+make[3]: Leaving directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+make[2]: Leaving directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+find debian/tmp/ -name "*.pyc" | xargs rm -f
+find debian/tmp/ -name "__pycache__" | xargs rm -f
+find debian/tmp/ -name "*.pyo" | xargs rm -f
+make[1]: Leaving directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+   debian/rules override_dh_auto_install-indep
+make[1]: Entering directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+pyversions: missing X(S)-Python-Version in control file, fall back to debian/pyversions
+pyversions: missing debian/pyversions file, fall back to supported versions
+py3versions: no X-Python3-Version in control file, using supported versions
+py3versions: no X-Python3-Version in control file, using supported versions
+pyversions: missing X(S)-Python-Version in control file, fall back to debian/pyversions
+pyversions: missing debian/pyversions file, fall back to supported versions
+set -e ; for vers in 3.7; do \
+	python$vers setup.py install --install-layout=deb --root=/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp; \
+done
+running install
+running build
+running build_py
+creating build
+creating build/lib
+creating build/lib/subunit
+copying python/subunit/v2.py -> build/lib/subunit
+copying python/subunit/test_results.py -> build/lib/subunit
+copying python/subunit/run.py -> build/lib/subunit
+copying python/subunit/progress_model.py -> build/lib/subunit
+copying python/subunit/iso8601.py -> build/lib/subunit
+copying python/subunit/filters.py -> build/lib/subunit
+copying python/subunit/details.py -> build/lib/subunit
+copying python/subunit/chunked.py -> build/lib/subunit
+copying python/subunit/_to_disk.py -> build/lib/subunit
+copying python/subunit/_output.py -> build/lib/subunit
+copying python/subunit/__init__.py -> build/lib/subunit
+creating build/lib/subunit/tests
+copying python/subunit/tests/test_test_results.py -> build/lib/subunit/tests
+copying python/subunit/tests/test_test_protocol2.py -> build/lib/subunit/tests
+copying python/subunit/tests/test_test_protocol.py -> build/lib/subunit/tests
+copying python/subunit/tests/test_tap2subunit.py -> build/lib/subunit/tests
+copying python/subunit/tests/test_subunit_tags.py -> build/lib/subunit/tests
+copying python/subunit/tests/test_subunit_stats.py -> build/lib/subunit/tests
+copying python/subunit/tests/test_subunit_filter.py -> build/lib/subunit/tests
+copying python/subunit/tests/test_run.py -> build/lib/subunit/tests
+copying python/subunit/tests/test_progress_model.py -> build/lib/subunit/tests
+copying python/subunit/tests/test_output_filter.py -> build/lib/subunit/tests
+copying python/subunit/tests/test_filters.py -> build/lib/subunit/tests
+copying python/subunit/tests/test_filter_to_disk.py -> build/lib/subunit/tests
+copying python/subunit/tests/test_details.py -> build/lib/subunit/tests
+copying python/subunit/tests/test_chunked.py -> build/lib/subunit/tests
+copying python/subunit/tests/sample-two-script.py -> build/lib/subunit/tests
+copying python/subunit/tests/sample-script.py -> build/lib/subunit/tests
+copying python/subunit/tests/__init__.py -> build/lib/subunit/tests
+running build_scripts
+creating build/scripts-3.7
+copying and adjusting filters/subunit-1to2 -> build/scripts-3.7
+copying and adjusting filters/subunit-2to1 -> build/scripts-3.7
+copying and adjusting filters/subunit-filter -> build/scripts-3.7
+copying and adjusting filters/subunit-ls -> build/scripts-3.7
+copying and adjusting filters/subunit-notify -> build/scripts-3.7
+copying and adjusting filters/subunit-output -> build/scripts-3.7
+copying and adjusting filters/subunit-stats -> build/scripts-3.7
+copying and adjusting filters/subunit-tags -> build/scripts-3.7
+copying and adjusting filters/subunit2csv -> build/scripts-3.7
+copying and adjusting filters/subunit2disk -> build/scripts-3.7
+copying and adjusting filters/subunit2gtk -> build/scripts-3.7
+copying and adjusting filters/subunit2junitxml -> build/scripts-3.7
+copying and adjusting filters/subunit2pyunit -> build/scripts-3.7
+copying and adjusting filters/tap2subunit -> build/scripts-3.7
+changing mode of build/scripts-3.7/subunit-1to2 from 644 to 755
+changing mode of build/scripts-3.7/subunit-2to1 from 644 to 755
+changing mode of build/scripts-3.7/subunit-filter from 644 to 755
+changing mode of build/scripts-3.7/subunit-ls from 644 to 755
+changing mode of build/scripts-3.7/subunit-notify from 644 to 755
+changing mode of build/scripts-3.7/subunit-output from 644 to 755
+changing mode of build/scripts-3.7/subunit-stats from 644 to 755
+changing mode of build/scripts-3.7/subunit-tags from 644 to 755
+changing mode of build/scripts-3.7/subunit2csv from 644 to 755
+changing mode of build/scripts-3.7/subunit2disk from 644 to 755
+changing mode of build/scripts-3.7/subunit2gtk from 644 to 755
+changing mode of build/scripts-3.7/subunit2junitxml from 644 to 755
+changing mode of build/scripts-3.7/subunit2pyunit from 644 to 755
+changing mode of build/scripts-3.7/tap2subunit from 644 to 755
+running install_lib
+creating /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3
+creating /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages
+creating /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit
+creating /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/tests/__init__.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/tests/sample-script.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/tests/sample-two-script.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/tests/test_chunked.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/tests/test_details.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/tests/test_filter_to_disk.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/tests/test_filters.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/tests/test_output_filter.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/tests/test_progress_model.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/tests/test_run.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/tests/test_subunit_filter.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/tests/test_subunit_stats.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/tests/test_subunit_tags.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/tests/test_tap2subunit.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/tests/test_test_protocol.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/tests/test_test_protocol2.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/tests/test_test_results.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests
+copying build/lib/subunit/__init__.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit
+copying build/lib/subunit/_output.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit
+copying build/lib/subunit/_to_disk.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit
+copying build/lib/subunit/chunked.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit
+copying build/lib/subunit/details.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit
+copying build/lib/subunit/filters.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit
+copying build/lib/subunit/iso8601.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit
+copying build/lib/subunit/progress_model.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit
+copying build/lib/subunit/run.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit
+copying build/lib/subunit/test_results.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit
+copying build/lib/subunit/v2.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests/__init__.py to __init__.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests/sample-script.py to sample-script.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests/sample-two-script.py to sample-two-script.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests/test_chunked.py to test_chunked.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests/test_details.py to test_details.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests/test_filter_to_disk.py to test_filter_to_disk.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests/test_filters.py to test_filters.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests/test_output_filter.py to test_output_filter.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests/test_progress_model.py to test_progress_model.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests/test_run.py to test_run.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests/test_subunit_filter.py to test_subunit_filter.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests/test_subunit_stats.py to test_subunit_stats.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests/test_subunit_tags.py to test_subunit_tags.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests/test_tap2subunit.py to test_tap2subunit.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests/test_test_protocol.py to test_test_protocol.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests/test_test_protocol2.py to test_test_protocol2.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/tests/test_test_results.py to test_test_results.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/__init__.py to __init__.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/_output.py to _output.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/_to_disk.py to _to_disk.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/chunked.py to chunked.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/details.py to details.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/filters.py to filters.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/iso8601.py to iso8601.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/progress_model.py to progress_model.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/run.py to run.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/test_results.py to test_results.cpython-37.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/subunit/v2.py to v2.cpython-37.pyc
+running install_egg_info
+running egg_info
+creating python_subunit.egg-info
+writing python_subunit.egg-info/PKG-INFO
+writing dependency_links to python_subunit.egg-info/dependency_links.txt
+writing requirements to python_subunit.egg-info/requires.txt
+writing top-level names to python_subunit.egg-info/top_level.txt
+writing manifest file 'python_subunit.egg-info/SOURCES.txt'
+reading manifest file 'python_subunit.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no previously-included files found matching '.gitignore'
+warning: no previously-included files found matching 'aclocal.m4'
+no previously-included directories found matching 'autom4te.cache'
+no previously-included directories found matching 'c'
+no previously-included directories found matching 'c++'
+no previously-included directories found matching 'compile'
+warning: no previously-included files found matching 'configure*'
+warning: no previously-included files found matching 'depcomp'
+warning: no previously-included files found matching 'INSTALL'
+warning: no previously-included files found matching 'install-sh'
+warning: no previously-included files found matching 'lib*'
+warning: no previously-included files found matching 'ltmain.sh'
+no previously-included directories found matching 'm4'
+warning: no previously-included files found matching 'Makefile*'
+warning: no previously-included files found matching 'missing'
+no previously-included directories found matching 'perl'
+warning: no previously-included files found matching 'py-compile'
+no previously-included directories found matching 'shell'
+warning: no previously-included files found matching 'stamp-h1'
+writing manifest file 'python_subunit.egg-info/SOURCES.txt'
+Copying python_subunit.egg-info to /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python3/dist-packages/python_subunit-1.3.0.egg-info
+Skipping SOURCES.txt
+running install_scripts
+copying build/scripts-3.7/tap2subunit -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-3.7/subunit2pyunit -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-3.7/subunit2junitxml -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-3.7/subunit2gtk -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-3.7/subunit2disk -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-3.7/subunit2csv -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-3.7/subunit-tags -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-3.7/subunit-stats -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-3.7/subunit-output -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-3.7/subunit-notify -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-3.7/subunit-ls -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-3.7/subunit-filter -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-3.7/subunit-2to1 -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-3.7/subunit-1to2 -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/tap2subunit to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit2pyunit to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit2junitxml to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit2gtk to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit2disk to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit2csv to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit-tags to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit-stats to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit-output to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit-notify to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit-ls to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit-filter to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit-2to1 to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit-1to2 to 755
+set -e ; for vers in 2.7; do \
+	python$vers setup.py install --install-layout=deb --single-version-externally-managed --root=/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp; \
+done
+running install
+running build
+running build_py
+creating build/lib.linux-x86_64-2.7
+creating build/lib.linux-x86_64-2.7/subunit
+copying python/subunit/v2.py -> build/lib.linux-x86_64-2.7/subunit
+copying python/subunit/test_results.py -> build/lib.linux-x86_64-2.7/subunit
+copying python/subunit/run.py -> build/lib.linux-x86_64-2.7/subunit
+copying python/subunit/progress_model.py -> build/lib.linux-x86_64-2.7/subunit
+copying python/subunit/iso8601.py -> build/lib.linux-x86_64-2.7/subunit
+copying python/subunit/filters.py -> build/lib.linux-x86_64-2.7/subunit
+copying python/subunit/details.py -> build/lib.linux-x86_64-2.7/subunit
+copying python/subunit/chunked.py -> build/lib.linux-x86_64-2.7/subunit
+copying python/subunit/_to_disk.py -> build/lib.linux-x86_64-2.7/subunit
+copying python/subunit/_output.py -> build/lib.linux-x86_64-2.7/subunit
+copying python/subunit/__init__.py -> build/lib.linux-x86_64-2.7/subunit
+creating build/lib.linux-x86_64-2.7/subunit/tests
+copying python/subunit/tests/test_test_results.py -> build/lib.linux-x86_64-2.7/subunit/tests
+copying python/subunit/tests/test_test_protocol2.py -> build/lib.linux-x86_64-2.7/subunit/tests
+copying python/subunit/tests/test_test_protocol.py -> build/lib.linux-x86_64-2.7/subunit/tests
+copying python/subunit/tests/test_tap2subunit.py -> build/lib.linux-x86_64-2.7/subunit/tests
+copying python/subunit/tests/test_subunit_tags.py -> build/lib.linux-x86_64-2.7/subunit/tests
+copying python/subunit/tests/test_subunit_stats.py -> build/lib.linux-x86_64-2.7/subunit/tests
+copying python/subunit/tests/test_subunit_filter.py -> build/lib.linux-x86_64-2.7/subunit/tests
+copying python/subunit/tests/test_run.py -> build/lib.linux-x86_64-2.7/subunit/tests
+copying python/subunit/tests/test_progress_model.py -> build/lib.linux-x86_64-2.7/subunit/tests
+copying python/subunit/tests/test_output_filter.py -> build/lib.linux-x86_64-2.7/subunit/tests
+copying python/subunit/tests/test_filters.py -> build/lib.linux-x86_64-2.7/subunit/tests
+copying python/subunit/tests/test_filter_to_disk.py -> build/lib.linux-x86_64-2.7/subunit/tests
+copying python/subunit/tests/test_details.py -> build/lib.linux-x86_64-2.7/subunit/tests
+copying python/subunit/tests/test_chunked.py -> build/lib.linux-x86_64-2.7/subunit/tests
+copying python/subunit/tests/sample-two-script.py -> build/lib.linux-x86_64-2.7/subunit/tests
+copying python/subunit/tests/sample-script.py -> build/lib.linux-x86_64-2.7/subunit/tests
+copying python/subunit/tests/__init__.py -> build/lib.linux-x86_64-2.7/subunit/tests
+running build_scripts
+creating build/scripts-2.7
+copying and adjusting filters/subunit-1to2 -> build/scripts-2.7
+copying and adjusting filters/subunit-2to1 -> build/scripts-2.7
+copying and adjusting filters/subunit-filter -> build/scripts-2.7
+copying and adjusting filters/subunit-ls -> build/scripts-2.7
+copying and adjusting filters/subunit-notify -> build/scripts-2.7
+copying and adjusting filters/subunit-output -> build/scripts-2.7
+copying and adjusting filters/subunit-stats -> build/scripts-2.7
+copying and adjusting filters/subunit-tags -> build/scripts-2.7
+copying and adjusting filters/subunit2csv -> build/scripts-2.7
+copying and adjusting filters/subunit2disk -> build/scripts-2.7
+copying and adjusting filters/subunit2gtk -> build/scripts-2.7
+copying and adjusting filters/subunit2junitxml -> build/scripts-2.7
+copying and adjusting filters/subunit2pyunit -> build/scripts-2.7
+copying and adjusting filters/tap2subunit -> build/scripts-2.7
+changing mode of build/scripts-2.7/subunit-1to2 from 644 to 755
+changing mode of build/scripts-2.7/subunit-2to1 from 644 to 755
+changing mode of build/scripts-2.7/subunit-filter from 644 to 755
+changing mode of build/scripts-2.7/subunit-ls from 644 to 755
+changing mode of build/scripts-2.7/subunit-notify from 644 to 755
+changing mode of build/scripts-2.7/subunit-output from 644 to 755
+changing mode of build/scripts-2.7/subunit-stats from 644 to 755
+changing mode of build/scripts-2.7/subunit-tags from 644 to 755
+changing mode of build/scripts-2.7/subunit2csv from 644 to 755
+changing mode of build/scripts-2.7/subunit2disk from 644 to 755
+changing mode of build/scripts-2.7/subunit2gtk from 644 to 755
+changing mode of build/scripts-2.7/subunit2junitxml from 644 to 755
+changing mode of build/scripts-2.7/subunit2pyunit from 644 to 755
+changing mode of build/scripts-2.7/tap2subunit from 644 to 755
+running install_lib
+creating /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+copying build/lib.linux-x86_64-2.7/subunit/tests/__init__.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+copying build/lib.linux-x86_64-2.7/subunit/tests/sample-script.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+copying build/lib.linux-x86_64-2.7/subunit/tests/sample-two-script.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+copying build/lib.linux-x86_64-2.7/subunit/tests/test_chunked.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+copying build/lib.linux-x86_64-2.7/subunit/tests/test_details.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+copying build/lib.linux-x86_64-2.7/subunit/tests/test_filter_to_disk.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+copying build/lib.linux-x86_64-2.7/subunit/tests/test_filters.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+copying build/lib.linux-x86_64-2.7/subunit/tests/test_output_filter.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+copying build/lib.linux-x86_64-2.7/subunit/tests/test_progress_model.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+copying build/lib.linux-x86_64-2.7/subunit/tests/test_run.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+copying build/lib.linux-x86_64-2.7/subunit/tests/test_subunit_filter.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+copying build/lib.linux-x86_64-2.7/subunit/tests/test_subunit_stats.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+copying build/lib.linux-x86_64-2.7/subunit/tests/test_subunit_tags.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+copying build/lib.linux-x86_64-2.7/subunit/tests/test_tap2subunit.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+copying build/lib.linux-x86_64-2.7/subunit/tests/test_test_protocol.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+copying build/lib.linux-x86_64-2.7/subunit/tests/test_test_protocol2.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+copying build/lib.linux-x86_64-2.7/subunit/tests/test_test_results.py -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests/__init__.py to __init__.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests/sample-script.py to sample-script.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests/sample-two-script.py to sample-two-script.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests/test_chunked.py to test_chunked.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests/test_details.py to test_details.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests/test_filter_to_disk.py to test_filter_to_disk.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests/test_filters.py to test_filters.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests/test_output_filter.py to test_output_filter.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests/test_progress_model.py to test_progress_model.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests/test_run.py to test_run.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests/test_subunit_filter.py to test_subunit_filter.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests/test_subunit_stats.py to test_subunit_stats.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests/test_subunit_tags.py to test_subunit_tags.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests/test_tap2subunit.py to test_tap2subunit.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests/test_test_protocol.py to test_test_protocol.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests/test_test_protocol2.py to test_test_protocol2.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/tests/test_test_results.py to test_test_results.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/__init__.py to __init__.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/_output.py to _output.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/_to_disk.py to _to_disk.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/chunked.py to chunked.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/details.py to details.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/filters.py to filters.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/iso8601.py to iso8601.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/progress_model.py to progress_model.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/run.py to run.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/test_results.py to test_results.pyc
+byte-compiling /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/subunit/v2.py to v2.pyc
+running install_egg_info
+running egg_info
+writing requirements to python_subunit.egg-info/requires.txt
+writing python_subunit.egg-info/PKG-INFO
+writing top-level names to python_subunit.egg-info/top_level.txt
+writing dependency_links to python_subunit.egg-info/dependency_links.txt
+reading manifest file 'python_subunit.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no previously-included files found matching '.gitignore'
+warning: no previously-included files found matching 'aclocal.m4'
+no previously-included directories found matching 'autom4te.cache'
+no previously-included directories found matching 'c'
+no previously-included directories found matching 'c++'
+no previously-included directories found matching 'compile'
+warning: no previously-included files found matching 'configure*'
+warning: no previously-included files found matching 'depcomp'
+warning: no previously-included files found matching 'INSTALL'
+warning: no previously-included files found matching 'install-sh'
+warning: no previously-included files found matching 'lib*'
+warning: no previously-included files found matching 'ltmain.sh'
+no previously-included directories found matching 'm4'
+warning: no previously-included files found matching 'Makefile*'
+warning: no previously-included files found matching 'missing'
+no previously-included directories found matching 'perl'
+warning: no previously-included files found matching 'py-compile'
+no previously-included directories found matching 'shell'
+warning: no previously-included files found matching 'stamp-h1'
+writing manifest file 'python_subunit.egg-info/SOURCES.txt'
+Copying python_subunit.egg-info to /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/lib/python2.7/dist-packages/python_subunit-1.3.0.egg-info
+Skipping SOURCES.txt
+running install_scripts
+copying build/scripts-2.7/tap2subunit -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-2.7/subunit2pyunit -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-2.7/subunit2junitxml -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-2.7/subunit2gtk -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-2.7/subunit2disk -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-2.7/subunit2csv -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-2.7/subunit-tags -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-2.7/subunit-stats -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-2.7/subunit-output -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-2.7/subunit-notify -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-2.7/subunit-ls -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-2.7/subunit-filter -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-2.7/subunit-2to1 -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+copying build/scripts-2.7/subunit-1to2 -> /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/tap2subunit to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit2pyunit to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit2junitxml to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit2gtk to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit2disk to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit2csv to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit-tags to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit-stats to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit-output to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit-notify to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit-ls to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit-filter to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit-2to1 to 755
+changing mode of /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/subunit-1to2 to 755
+set -e && for i in /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/tmp/usr/bin/* ; do \
+	sed -i 's|#![ ]*/usr/bin/python.*|#!/usr/bin/env python|' $i ; \
+done
+make[1]: Leaving directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+   dh_install
+   dh_installdocs
+   debian/rules override_dh_installchangelogs
+make[1]: Entering directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+pyversions: missing X(S)-Python-Version in control file, fall back to debian/pyversions
+pyversions: missing debian/pyversions file, fall back to supported versions
+py3versions: no X-Python3-Version in control file, using supported versions
+if [ -e /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/CHANGELOG ] ; then \
+	dh_installchangelogs /dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/CHANGELOG ; \
+else \
+	dh_installchangelogs ; \
+fi
+make[1]: Leaving directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+   debian/rules override_dh_systemd_enable
+make[1]: Entering directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+pyversions: missing X(S)-Python-Version in control file, fall back to debian/pyversions
+pyversions: missing debian/pyversions file, fall back to supported versions
+py3versions: no X-Python3-Version in control file, using supported versions
+# Create the init scripts and systemd unit files from the template
+set -e ; set -x ; for i in `ls -1 debian/*.init.in` ; do \
+	MYINIT=`echo $i | sed s/.init.in//` ; \
+	cp $i $MYINIT.init ; \
+	cat /usr/share/openstack-pkg-tools/init-script-template >>$MYINIT.init ; \
+	pkgos-gen-systemd-unit $i ; \
+done
++ ls -1 debian/*.init.in
+ls: cannot access 'debian/*.init.in': No such file or directory
+# If there's a service.in file, use that one instead of the generated one
+set -e ; set -x ; for i in `ls -1 debian/*.service.in`; do \
+	MYPKG=`echo $i | sed s/.service.in//` ; \
+	cp $MYPKG.service.in $MYPKG.service ; \
+done
++ ls -1 debian/*.service.in
+ls: cannot access 'debian/*.service.in': No such file or directory
+# Generate the systemd unit if there's no already existing .service.in
+set -e ; set -x ; for i in `ls debian/*.init.in` ; do \
+	MYINIT=`echo $i | sed s/.init.in/.service.in/` ; \
+	if ! [ -e $MYINIT ] ; then \
+		pkgos-gen-systemd-unit $i ; \
+	fi \
+done
++ ls debian/*.init.in
+ls: cannot access 'debian/*.init.in': No such file or directory
+dh_systemd_enable
+make[1]: Leaving directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+   dh_python2
+I: dh_python2 tools:113: replacing shebang in debian/subunit/usr/bin/subunit2pyunit
+I: dh_python2 tools:113: replacing shebang in debian/subunit/usr/bin/subunit2junitxml
+I: dh_python2 tools:113: replacing shebang in debian/subunit/usr/bin/subunit2csv
+I: dh_python2 tools:113: replacing shebang in debian/subunit/usr/bin/subunit-2to1
+I: dh_python2 tools:113: replacing shebang in debian/subunit/usr/bin/tap2subunit
+I: dh_python2 tools:113: replacing shebang in debian/subunit/usr/bin/subunit2gtk
+I: dh_python2 tools:113: replacing shebang in debian/subunit/usr/bin/subunit2disk
+I: dh_python2 tools:113: replacing shebang in debian/subunit/usr/bin/subunit-tags
+I: dh_python2 tools:113: replacing shebang in debian/subunit/usr/bin/subunit-stats
+I: dh_python2 tools:113: replacing shebang in debian/subunit/usr/bin/subunit-output
+I: dh_python2 tools:113: replacing shebang in debian/subunit/usr/bin/subunit-notify
+I: dh_python2 tools:113: replacing shebang in debian/subunit/usr/bin/subunit-ls
+I: dh_python2 tools:113: replacing shebang in debian/subunit/usr/bin/subunit-filter
+I: dh_python2 tools:113: replacing shebang in debian/subunit/usr/bin/subunit-1to2
+   dh_python3
+   debian/rules override_dh_installinit
+make[1]: Entering directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+pyversions: missing X(S)-Python-Version in control file, fall back to debian/pyversions
+pyversions: missing debian/pyversions file, fall back to supported versions
+py3versions: no X-Python3-Version in control file, using supported versions
+# Create the init scripts and systemd unit files from the template
+set -e ; set -x ; for i in `ls -1 debian/*.init.in` ; do \
+	MYINIT=`echo $i | sed s/.init.in//` ; \
+	cp $i $MYINIT.init ; \
+	cat /usr/share/openstack-pkg-tools/init-script-template >>$MYINIT.init ; \
+	pkgos-gen-systemd-unit $i ; \
+done
++ ls -1 debian/*.init.in
+ls: cannot access 'debian/*.init.in': No such file or directory
+# If there's a service.in file, use that one instead of the generated one
+set -e ; set -x ; for i in `ls -1 debian/*.service.in`; do \
+	MYPKG=`echo $i | sed s/.service.in//` ; \
+	cp $MYPKG.service.in $MYPKG.service ; \
+done
++ ls -1 debian/*.service.in
+ls: cannot access 'debian/*.service.in': No such file or directory
+# Generate the systemd unit if there's no already existing .service.in
+set -e ; set -x ; for i in `ls debian/*.init.in` ; do \
+	MYINIT=`echo $i | sed s/.init.in/.service.in/` ; \
+	if ! [ -e $MYINIT ] ; then \
+		pkgos-gen-systemd-unit $i ; \
+	fi \
+done
++ ls debian/*.init.in
+ls: cannot access 'debian/*.init.in': No such file or directory
+dh_installinit --error-handler=true
+make[1]: Leaving directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+dpkg-shlibdeps: warning: deprecated use of LD_LIBRARY_PATH with private library directory which interferes with cross-building, please use -l option instead
+dpkg-shlibdeps: warning: deprecated use of LD_LIBRARY_PATH with private library directory which interferes with cross-building, please use -l option instead
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/libsubunit0/usr/lib/x86_64-linux-gnu/libsubunit.so.0.0.0 was not linked against libdl.so.2 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/libsubunit0/usr/lib/x86_64-linux-gnu/libsubunit.so.0.0.0 was not linked against libgcc_s.so.1 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/libsubunit0/usr/lib/x86_64-linux-gnu/libsubunit.so.0.0.0 was not linked against libpthread.so.0 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: symbol _ZN7CppUnit13TextOutputterD1Ev used by debian/libcppunit-subunit0/usr/lib/x86_64-linux-gnu/libcppunit_subunit.so.0.0.0 found in none of the libraries
+dpkg-shlibdeps: warning: symbol subunit_test_start used by debian/libcppunit-subunit0/usr/lib/x86_64-linux-gnu/libcppunit_subunit.so.0.0.0 found in none of the libraries
+dpkg-shlibdeps: warning: symbol subunit_test_fail used by debian/libcppunit-subunit0/usr/lib/x86_64-linux-gnu/libcppunit_subunit.so.0.0.0 found in none of the libraries
+dpkg-shlibdeps: warning: symbol _ZN7CppUnit13TextOutputterC1EPNS_19TestResultCollectorERSo used by debian/libcppunit-subunit0/usr/lib/x86_64-linux-gnu/libcppunit_subunit.so.0.0.0 found in none of the libraries
+dpkg-shlibdeps: warning: symbol _ZN7CppUnit13TextOutputter18printFailureDetailEPNS_9ExceptionE used by debian/libcppunit-subunit0/usr/lib/x86_64-linux-gnu/libcppunit_subunit.so.0.0.0 found in none of the libraries
+dpkg-shlibdeps: warning: symbol subunit_test_error used by debian/libcppunit-subunit0/usr/lib/x86_64-linux-gnu/libcppunit_subunit.so.0.0.0 found in none of the libraries
+dpkg-shlibdeps: warning: symbol subunit_test_pass used by debian/libcppunit-subunit0/usr/lib/x86_64-linux-gnu/libcppunit_subunit.so.0.0.0 found in none of the libraries
+dpkg-shlibdeps: warning: symbol _ZN7CppUnit13TextOutputter20printFailureLocationENS_10SourceLineE used by debian/libcppunit-subunit0/usr/lib/x86_64-linux-gnu/libcppunit_subunit.so.0.0.0 found in none of the libraries
+dpkg-shlibdeps: warning: symbol _ZN7CppUnit10SourceLineD1Ev used by debian/libcppunit-subunit0/usr/lib/x86_64-linux-gnu/libcppunit_subunit.so.0.0.0 found in none of the libraries
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/libcppunit-subunit0/usr/lib/x86_64-linux-gnu/libcppunit_subunit.so.0.0.0 was not linked against libpthread.so.0 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/libcppunit-subunit0/usr/lib/x86_64-linux-gnu/libcppunit_subunit.so.0.0.0 was not linked against libdl.so.2 (it uses none of the library's symbols)
+   dh_installdeb
+   debian/rules override_dh_gencontrol
+make[1]: Entering directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+pyversions: missing X(S)-Python-Version in control file, fall back to debian/pyversions
+pyversions: missing debian/pyversions file, fall back to supported versions
+py3versions: no X-Python3-Version in control file, using supported versions
+if dpkg-vendor --derives-from ubuntu ; then \
+	dh_gencontrol -- -T/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/ubuntu_control_vars ; \
+else \
+	dh_gencontrol -- -T/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit/debian/debian_control_vars ; \
+fi
+dpkg-gencontrol: warning: Depends field of package libsubunit-dev: substitution variable ${shlibs:Depends} used, but is not defined
+dpkg-gencontrol: warning: Depends field of package libcppunit-subunit-dev: substitution variable ${shlibs:Depends} used, but is not defined
+dpkg-gencontrol: warning: package python-subunit: substitution variable ${python:Provides} unused, but is defined
+dpkg-gencontrol: warning: package python-subunit: substitution variable ${python:Versions} unused, but is defined
+make[1]: Leaving directory '/dev/shm/systemd/test/deps/test/lvm2/tmp/corosync/tmp/libqb/libsubunit-dev/subunit'
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'libcppunit-subunit-dev' in '../libcppunit-subunit-dev_1.3.0-2_amd64.deb'.
+dpkg-deb: building package 'libsubunit-perl' in '../libsubunit-perl_1.3.0-2_all.deb'.
+dpkg-deb: building package 'libcppunit-subunit0-dbgsym' in '../libcppunit-subunit0-dbgsym_1.3.0-2_amd64.deb'.
+dpkg-deb: building package 'libsubunit0-dbgsym' in '../libsubunit0-dbgsym_1.3.0-2_amd64.deb'.
+dpkg-deb: building package 'python3-subunit' in '../python3-subunit_1.3.0-2_all.deb'.
+dpkg-deb: building package 'python-subunit' in '../python-subunit_1.3.0-2_all.deb'.
+dpkg-deb: building package 'libsubunit-dev' in '../libsubunit-dev_1.3.0-2_amd64.deb'.
+dpkg-deb: building package 'libsubunit0' in '../libsubunit0_1.3.0-2_amd64.deb'.
+dpkg-deb: building package 'subunit' in '../subunit_1.3.0-2_all.deb'.
+dpkg-deb: building package 'libcppunit-subunit0' in '../libcppunit-subunit0_1.3.0-2_amd64.deb'.
+FAKEROOTKEY=949708630 LD_LIBRARY_PATH=:/opt/intel/lib/intel64_lin:/opt/intel/tbb/lib/intel64/gcc4.7 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libfakeroot/libfakeroot-sysv.so debian/rules binary
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../subunit_1.3.0-2_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-source: info: using options from subunit/debian/source/options: --extend-diff-ignore=^[^/]*[.]egg-info/
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian subunit_1.3.0-2_amd64.changes ...
+W: subunit: binary-without-manpage usr/bin/subunit-1to2
+W: subunit: binary-without-manpage usr/bin/subunit-2to1
+W: subunit: binary-without-manpage usr/bin/subunit-diff
+W: subunit: binary-without-manpage usr/bin/subunit-filter
+W: subunit: binary-without-manpage usr/bin/subunit-ls
+W: subunit: binary-without-manpage usr/bin/subunit-notify
+W: subunit: binary-without-manpage usr/bin/subunit-output
+W: subunit: binary-without-manpage usr/bin/subunit-stats
+W: subunit: binary-without-manpage usr/bin/subunit-tags
+W: subunit: binary-without-manpage usr/bin/subunit2csv
+W: subunit: binary-without-manpage usr/bin/subunit2disk
+W: subunit: binary-without-manpage usr/bin/subunit2gtk
+W: subunit: binary-without-manpage usr/bin/subunit2junitxml
+W: subunit: binary-without-manpage usr/bin/subunit2pyunit
+W: subunit: binary-without-manpage usr/bin/tap2subunit
+Finished running lintian.

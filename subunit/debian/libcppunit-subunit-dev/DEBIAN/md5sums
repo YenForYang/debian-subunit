@@ -1,0 +1,5 @@
+ce85bc07550aa7e1c206f556154814cb  usr/include/subunit/SubunitTestProgressListener.h
+885ae7bad9316fe0eb635e9d1c2a8fc8  usr/lib/x86_64-linux-gnu/libcppunit_subunit.a
+fdd4d1cd9b246392e39588a4026b134e  usr/lib/x86_64-linux-gnu/pkgconfig/libcppunit_subunit.pc
+083de40b3f49e9c2a0465dcc68ffd37f  usr/share/doc/libcppunit-subunit-dev/changelog.Debian.gz
+4ba692a07419fadf4bf36d4f57d9871e  usr/share/doc/libcppunit-subunit-dev/copyright

@@ -1,0 +1,60 @@
+Format: 1.8
+Date: Mon, 12 Feb 2018 10:29:30 +0100
+Source: subunit
+Binary: libcppunit-subunit-dev libcppunit-subunit0 libsubunit-dev libsubunit-perl libsubunit0 python-subunit python3-subunit subunit
+Built-For-Profiles: nobiarch nocheck nodoc
+Architecture: amd64 all
+Version: 1.3.0-2
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Debian OpenStack <team+openstack@tracker.debian.org>
+Changed-By: Ondřej Nový <onovy@debian.org>
+Description:
+ libcppunit-subunit-dev - SubunitTestProgressListener for CPPUnit - Development headers
+ libcppunit-subunit0 - SubunitTestProgressListener for CPPUnit - C++ shared library
+ libsubunit-dev - Unit testing protocol - Development headers and static library fo
+ libsubunit-perl - perl parser and diff for Subunit streams
+ libsubunit0 - Unit testing protocol - C/C++ shared library
+ python-subunit - unit testing protocol - Python bindings to generate and consume s
+ python3-subunit - unit testing protocol - Python3 bindings to generate and consume
+ subunit    - command line tools for processing Subunit streams
+Changes:
+ subunit (1.3.0-2) UNRELEASED; urgency=medium
+ .
+   * d/control: Use team+openstack@tracker.debian.org as maintainer
+Checksums-Sha1:
+ 0b5b518dbd147c9d4b6b488573f71436cff81951 292152 libcppunit-subunit-dev_1.3.0-2_amd64.deb
+ e66b1c6776c585da88d63a50d5e29cca75e44291 21212 libcppunit-subunit0-dbgsym_1.3.0-2_amd64.deb
+ a58737f4e1ba94e7dbc3047a1f4cf51af4895442 14348 libcppunit-subunit0_1.3.0-2_amd64.deb
+ 099dd0a367a5c83b8ab9e2e63d57d0b597774c27 21012 libsubunit-dev_1.3.0-2_amd64.deb
+ 2e5fddfd0a2c153a672fc3cdba6b4460b91dcec5 8784 libsubunit-perl_1.3.0-2_all.deb
+ 5822cd206453f09b93c5e2f094b14ba4b2300de9 5140 libsubunit0-dbgsym_1.3.0-2_amd64.deb
+ 775df4989767195123d25f1e223bce88b90e5010 9372 libsubunit0_1.3.0-2_amd64.deb
+ 4101ea1d6ef1f8d88923020ceac05da22adb834d 64536 python-subunit_1.3.0-2_all.deb
+ 77969e0884ea41c1efaeeee704d7d9b3af46677a 64600 python3-subunit_1.3.0-2_all.deb
+ 4c672f29ca4a2c36ced47978b2c113072d8c6145 13372 subunit_1.3.0-2_all.deb
+ 9d4606cac13f69634cff4be28a67179395690c29 9793 subunit_1.3.0-2_amd64.buildinfo
+Checksums-Sha256:
+ adfffba11579a9a89d944011f3b7e20ef8a73e93b2c79e6be883e9602ac8ca27 292152 libcppunit-subunit-dev_1.3.0-2_amd64.deb
+ 8542f2b63f7118b1b44b2a796b4e767b9a8a98e89aca840d9f06b25cbb031eed 21212 libcppunit-subunit0-dbgsym_1.3.0-2_amd64.deb
+ 1ca9ed4c245848885dd6dc5b7d5b28efe54300fd1207b1e7685c95f23f4f6db5 14348 libcppunit-subunit0_1.3.0-2_amd64.deb
+ 2a43eeace66e0598560f70d19adc46efc4e1d8464c829d85d1f4498c3cdebe13 21012 libsubunit-dev_1.3.0-2_amd64.deb
+ 63445f63b3031636c74d47406ff30db7071df6a55a6aa9d954a517355119de29 8784 libsubunit-perl_1.3.0-2_all.deb
+ 71a5c8d6ea0be1f714f51c5f4d3ce4f7e2c7ec0f5dfb5d52940ca59f73d82283 5140 libsubunit0-dbgsym_1.3.0-2_amd64.deb
+ 0d8a2687e468295d451416e3922684d736f03d095f9b28a39a117a8f9c469aa3 9372 libsubunit0_1.3.0-2_amd64.deb
+ f9778d6d3e3632acd561bb8015fc2a21e4963807c83d83231f7caa141d4f322a 64536 python-subunit_1.3.0-2_all.deb
+ aab82f5ebcc9abbc5f4f3ba18467ea3b4548175dea9c919423f491c5a0413dc2 64600 python3-subunit_1.3.0-2_all.deb
+ db371288115f2f48e4500266bcf54f89fcda626ddc6675c4b56131cdc3811bd3 13372 subunit_1.3.0-2_all.deb
+ 1c43d1e257a0019032863b239fa70b51e828f63e39c1ef6eb29f93bfaf385f06 9793 subunit_1.3.0-2_amd64.buildinfo
+Files:
+ 59ba5faa56786c59cb9cf0597db4850e 292152 libdevel optional libcppunit-subunit-dev_1.3.0-2_amd64.deb
+ dbdd8fb34ad4d0330df9b94e53be17b6 21212 debug optional libcppunit-subunit0-dbgsym_1.3.0-2_amd64.deb
+ 8fadbffcc1ae2c2f7e7a03d93eb70770 14348 libs optional libcppunit-subunit0_1.3.0-2_amd64.deb
+ 5e06615a65e9c33c54d82f0c81e67092 21012 libdevel optional libsubunit-dev_1.3.0-2_amd64.deb
+ d168a1ee46562774a84f6b8b4a36f471 8784 perl optional libsubunit-perl_1.3.0-2_all.deb
+ 761a2de7c51f1f09e00eed6177212352 5140 debug optional libsubunit0-dbgsym_1.3.0-2_amd64.deb
+ 41690a26489b1202186d1cf4e29fc030 9372 libs optional libsubunit0_1.3.0-2_amd64.deb
+ 3c85b6fa88eed55fb5de0ebdf269a8fb 64536 python optional python-subunit_1.3.0-2_all.deb
+ f44bf9fd46cceda006a34fca0570ab73 64600 python optional python3-subunit_1.3.0-2_all.deb
+ 1af61721a585f3617118b619483ee0f5 13372 devel optional subunit_1.3.0-2_all.deb
+ 37ca16a4b66229013a17b82b23acdb99 9793 devel optional subunit_1.3.0-2_amd64.buildinfo
